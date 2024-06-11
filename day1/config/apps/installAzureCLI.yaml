@@ -1,0 +1,31 @@
+---
+- name: Install Azure CLI on Ubuntu
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install required dependencies
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - apt-transport-https
+          - lsb-release
+          - gnupg
+        state: present
+        update_cache: yes
+
+    - name: Download and add Microsoft signing key
+      ansible.builtin.shell: |
+        curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+        install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+        rm microsoft.gpg
+
+    - name: Add Azure CLI repository
+      ansible.builtin.shell: |
+        echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/azure-cli.list
+
+    - name: Install Azure CLI
+      apt:
+        name: azure-cli
+        state: present
+        update_cache: yes

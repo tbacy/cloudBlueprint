@@ -1,0 +1,41 @@
+Assignment: Deploy a Static Website on Azure Blob Storage
+
+This assignment involves creating the necessary Azure resources to host a static website, using Terraform to automate the process.
+Objectives:
+
+    Create an Azure Storage Account: This is where your website's static files will be stored.
+    Enable Static Website Hosting: Configure the storage account to serve static content.
+
+Steps:
+
+    Set Up Your Environment:
+        Install Terraform and the Azure CLI on your machine.
+        Configure Azure CLI with your Azure account credentials.
+
+    Create Terraform Configuration:
+        Write a main.tf file to provision an Azure Storage Account.
+        Include a variables.tf to manage any inputs.
+        Use outputs.tf to retrieve the URL of the static website once deployed.
+
+    Initialize Terraform:
+        Run terraform init to initialize the project and download necessary providers.
+
+    Plan and Apply Configuration:
+        Execute terraform plan to see the execution plan and verify your configuration.
+        Run terraform apply to create the resources in Azure.
+
+    Upload a Simple HTML File:
+        Create a simple index.html file as your website's landing page.
+        Use Azure CLI or the Azure portal to upload this file to the Blob Storage.
+
+    Verify Deployment:
+        Access the website using the URL output from Terraform to ensure it’s serving the static file correctly.
+
+Deliverables:
+
+    Terraform configuration files (main.tf, variables.tf, outputs.tf).
+    A screenshot of your browser showing the deployed static site using the Azure Storage account URL.
+
+This assignment will give you a hands-on experience with Terraform and Azure, setting a solid foundation for more complex scenarios 
+involving Cloudflare and Ansible in future tasks. Once you’ve completed this, you can commit your Terraform configurations and the 
+index.html file to your "cloudBlueprint" repository.

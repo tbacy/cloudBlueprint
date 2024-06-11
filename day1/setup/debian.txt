@@ -1,0 +1,7 @@
+Install Ansible
+sudo apt install ansible
+
+Install terraform
+ansible-playbook day1\config\apps\installTf.yaml -i inventory.ini
+
+Install Microsoft Azure CLI

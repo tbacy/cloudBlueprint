@@ -1,0 +1,9 @@
+Install terraform
+winget install Hashicorp.Terraform
+
+Install WSL (for ansible)
+wsl --install
+
+Install Microsoft Azure CLI
+winget install Microsoft.AzureCLI
+
